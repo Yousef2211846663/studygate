@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StudyGate</title>
+    <title>AdminLTE 3 | Simple Tables</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- CSS DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
 
 </head>
 
@@ -279,7 +282,7 @@
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
-                                    <a href="index.html" class="nav-link">
+                                    <a href="pages/StudyMaterials/index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
                                             المواد الدراسية
@@ -347,77 +350,104 @@
 
             <!-- Main content -->
             <section class="content">
-    <div class="container-fluid">
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">إضافة جدول الامتحانات</h3>
-            </div>
-            <!-- form start -->
-            <form>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>الفصل الدراسي</label>
-                        <select class="form-control">
-                            <option>الفصل الأول</option>
-                            <option>الفصل الثاني</option>
-                            <option>الفصل الثالث</option>
-                        </select>
-                    </div>
+                <div class="container-fluid">
+                    <div class="card card-warning">
+                        <div class="card-header">
+                            <h3 class="card-title">تعديل بيانات المحاضرة</h3>
+                        </div>
+                        <form action="update_lecture.php" method="POST">
+                            <!-- حقل مخفي لإرسال معرف المحاضرة -->
+                            <input type="hidden" name="lecture_id" value="1">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم المادة</label>
+                                            <select class="form-control" name="subject_name" required>
+                                                <option value="">-- اختر المادة --</option>
+                                                <option value="برمجة 1" selected>برمجة 1</option>
+                                                <option value="برمجة كائنية">برمجة كائنية</option>
+                                                <option value="قواعد بيانات">قواعد بيانات</option>
+                                                <option value="شبكات">شبكات</option>
+                                                <option value="نظم تشغيل">نظم تشغيل</option>
+                                                <option value="ذكاء اصطناعي">ذكاء اصطناعي</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم المحاضر</label>
+                                            <select class="form-control" name="instructor_name" required>
+                                                <option value="">-- اختر المحاضر --</option>
+                                                <option value="د. أحمد الزليطني">د. أحمد الزليطني</option>
+                                                <option value="م. محمد حمودة" selected>م. محمد حمودة</option>
+                                                <option value="أ. فاطمة التومي">أ. فاطمة التومي</option>
+                                                <option value="د. سلوى المقري">د. سلوى المقري</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        <label>المادة الدراسية</label>
-                        <select class="form-control">
-                            <option>برمجة 1</option>
-                            <option>نظم التشغيل</option>
-                            <option>قواعد البيانات</option>
-                        </select>
-                    </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اليوم</label>
+                                            <select class="form-control" name="lecture_day" required>
+                                                <option value="">-- اختر اليوم --</option>
+                                                <option value="السبت">السبت</option>
+                                                <option value="الأحد" selected>الأحد</option>
+                                                <option value="الإثنين">الإثنين</option>
+                                                <option value="الثلاثاء">الثلاثاء</option>
+                                                <option value="الأربعاء">الأربعاء</option>
+                                                <option value="الخميس">الخميس</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الفترة</label>
+                                            <select class="form-control" name="lecture_period" required>
+                                                <option value="">-- اختر الفترة --</option>
+                                                <option value="الفترة الأولى">الفترة الأولى</option>
+                                                <option value="الفترة الثانية" selected>الفترة الثانية</option>
+                                                <option value="الفترة الثالثة">الفترة الثالثة</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        <label>نوع الامتحان</label>
-                        <select class="form-control">
-                            <option>نصف الفصل</option>
-                            <option>النهائي</option>
-                        </select>
-                    </div>
+                                <div class="row">
 
-                    <div class="form-group">
-                        <label>تاريخ الامتحان</label>
-                        <input type="date" class="form-control">
-                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم القاعة</label>
+                                            <input type="text" class="form-control" name="hall_name" value="قاعة 5"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div class="form-group">
-                        <label>وقت الامتحان</label>
-                        <input type="time" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label>القاعة</label>
-                        <input type="text" class="form-control" placeholder="مثال: قاعة 102">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-warning text-white"><i class="fas fa-save"></i> حفظ
+                                    التعديلات</button>
+                                <a href="lectures.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i>
+                                    رجوع</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
+            </section>
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">حفظ الجدول</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+
 
 
 
 
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.1.0
-            </div>
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
-        </footer>
+
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -426,7 +456,7 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
+    </script>
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -435,6 +465,11 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JS DataTables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
 </body>
 
 </html>

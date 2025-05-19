@@ -200,9 +200,9 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                with font-awesome or any other icon font library -->
+               with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="../../index.html" class="nav-link active">
+                            <a href="./index.html" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     لوحة التحكم
@@ -219,7 +219,7 @@
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
+                                    <a href="./index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
                                             الفصول الدراسية
@@ -239,7 +239,7 @@
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
+                                    <a href="./index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
                                             الطلاب
@@ -259,7 +259,7 @@
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
+                                    <a href="./index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
                                             المعلمون
@@ -279,7 +279,7 @@
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
-                                    <a href="index.html" class="nav-link">
+                                    <a href="pages/StudyMaterials/index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
                                             المواد الدراسية
@@ -299,22 +299,66 @@
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-circle"></i>
                                         <p>
                                             الجداول الدراسية
+                                            <i class="right fas fa-angle-left"></i>
                                         </p>
                                     </a>
-                                    <a href="../../index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                    <ul class="nav nav-treeview" style="display: none;">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    عرض الجداول
+                                                </p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    اضافة الجداول
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-circle"></i>
                                         <p>
                                             جداول الامتحانات
+                                            <i class="right fas fa-angle-left"></i>
                                         </p>
                                     </a>
+                                    <ul class="nav nav-treeview" style="display: none;">
+                                        <li class="nav-item">
+                                            <a href="pages/ExamSchedules/FinalExams" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    عرض الجداول
+                                                </p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="pages/ExamSchedules/FinalExams" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    اضافة الجداول
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+
 
                             </ul>
                         </li>
+
 
 
                     </ul>
@@ -347,81 +391,82 @@
 
             <!-- Main content -->
             <section class="content">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <!-- general form elements -->
-        <div class="card card-warning">
-          <div class="card-header">
-            <h3 class="card-title">تعديل مادة دراسية</h3>
-          </div>
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <!-- general form elements -->
+                            <div class="card card-warning">
+                                <div class="card-header">
+                                    <h3 class="card-title">تعديل مادة دراسية</h3>
+                                </div>
 
-          <!-- نموذج تعديل المادة -->
-          <form action="update_subject.php?id=1" method="POST">
-            <div class="card-body">
-              <div class="form-group">
-                <label for="subjectName">اسم المادة</label>
-                <input type="text" class="form-control" id="subjectName" name="subjectName"
-                  value="برمجة 1" required />
-              </div>
+                                <!-- نموذج تعديل المادة -->
+                                <form action="update_subject.php?id=1" method="POST">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="subjectName">اسم المادة</label>
+                                            <input type="text" class="form-control" id="subjectName" name="subjectName"
+                                                value="برمجة 1" required />
+                                        </div>
 
-              <div class="form-group">
-                <label for="subjectCode">رمز المادة</label>
-                <input type="text" class="form-control" id="subjectCode" name="subjectCode"
-                  value="IT101" required />
-              </div>
+                                        <div class="form-group">
+                                            <label for="subjectCode">رمز المادة</label>
+                                            <input type="text" class="form-control" id="subjectCode" name="subjectCode"
+                                                value="IT101" required />
+                                        </div>
 
-              <div class="row">
-                <!-- السنة -->
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="year">السنة</label>
-                    <select class="form-control" id="year" name="year" required>
-                      <option value="1" selected>الأولى</option>
-                      <option value="2">الثانية</option>
-                      <option value="3">الثالثة</option>
-                      <option value="4">الرابعة</option>
-                    </select>
-                  </div>
+                                        <div class="row">
+                                            <!-- السنة -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="year">السنة</label>
+                                                    <select class="form-control" id="year" name="year" required>
+                                                        <option value="1" selected>الأولى</option>
+                                                        <option value="2">الثانية</option>
+                                                        <option value="3">الثالثة</option>
+                                                        <option value="4">الرابعة</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- القسم -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="department">القسم</label>
+                                                    <select class="form-control" id="department" name="department"
+                                                        required>
+                                                        <option value="تقنية معلومات" selected>تقنية معلومات</option>
+                                                        <option value="هندسة برمجيات">هندسة برمجيات</option>
+                                                        <option value="شبكات">شبكات</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <!-- الفصل -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="semester">الفصل</label>
+                                                    <select class="form-control" id="semester" name="semester" required>
+                                                        <option value="الأول" selected>الأول</option>
+                                                        <option value="الثاني">الثاني</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer d-flex justify-content-between">
+                                        <button type="submit" class="btn btn-warning">تحديث</button>
+                                        <a href="index.html" class="btn btn-secondary">إلغاء</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- القسم -->
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="department">القسم</label>
-                    <select class="form-control" id="department" name="department" required>
-                      <option value="تقنية معلومات" selected>تقنية معلومات</option>
-                      <option value="هندسة برمجيات">هندسة برمجيات</option>
-                      <option value="شبكات">شبكات</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <!-- الفصل -->
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="semester">الفصل</label>
-                    <select class="form-control" id="semester" name="semester" required>
-                      <option value="الأول" selected>الأول</option>
-                      <option value="الثاني">الثاني</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-footer d-flex justify-content-between">
-              <button type="submit" class="btn btn-warning">تحديث</button>
-              <a href="index.html" class="btn btn-secondary">إلغاء</a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            </section>
 
 
 

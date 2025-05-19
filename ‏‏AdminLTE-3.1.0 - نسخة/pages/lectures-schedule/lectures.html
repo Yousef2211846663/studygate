@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- CSS DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
 
 </head>
 
@@ -346,93 +349,68 @@
             </section>
 
             <!-- Main content -->
+
             <section class="content">
                 <div class="container-fluid">
-                    <div class="card card-primary card-outline">
-
-                        <!-- رأس الكارد -->
-                        <div class="card-header d-flex align-items-center">
-                            <h3 class="card-title">إدارة المواد الدراسية</h3>
-                            <a href="add.html" class="btn btn-primary ml-auto">
-                                <i class="fas fa-plus"></i> إضافة مادة
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">جدول المحاضرات</h3>
+                            <a href="add_lecture.php" class="btn btn-sm float-right"
+                                style="background-color: #7ecf68; color: white; font-weight: bold; border: none;">
+                                <i class="fas fa-plus"></i> إضافة محاضرة
                             </a>
-                        </div>
 
-                        <!-- جسم الكارد (الجدول) -->
-                        <div class="card-body p-0">
-                            <table class="table table-bordered table-hover text-center mb-0">
-                                <thead class="bg-light">
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-center">
+                                <thead class="thead-light">
                                     <tr>
                                         <th>#</th>
                                         <th>اسم المادة</th>
-                                        <th>رمز المادة</th>
-                                        <th>السنة</th>
-                                        <th>الفصل</th>
-                                        <th>القسم</th>
-                                        <th>إجراءات</th>
+                                        <th>اسم المحاضر</th>
+                                        <th>اليوم</th>
+                                        <th>الفترة</th>
+                                        <th>القاعة</th>
+                                        <th>الإجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- صف افتراضي 1 -->
+                                    <!-- يمكنك تكرار هذا الصف باستخدام PHP -->
                                     <tr>
                                         <td>1</td>
-                                        <td>برمجة 1</td>
-                                        <td>IT101</td>
-                                        <td>1</td>
-                                        <td>الأول</td>
-                                        <td>تقنية معلومات</td>
+                                        <td>قواعد بيانات</td>
+                                        <td>د. أحمد الزليطني</td>
+                                        <td>الأحد</td>
+                                        <td>الفترة الأولى</td>
+                                        <td>قاعة 3</td>
                                         <td>
-                                            <a href="edit.html?id=1" class="btn btn-sm btn-warning"
-                                                title="تعديل">
-                                                <i class="fas fa-edit"></i>
+                                            <a href="edit_lecture.php?id=1" class="btn btn-info btn-sm">
+                                                <i class="fas fa-edit"></i> تعديل
                                             </a>
-                                            <a href="delete.php?id=1" class="btn btn-sm btn-danger" title="حذف"
-                                                onclick="return confirm('هل أنت متأكد أنك تريد حذف هذه المادة؟');">
-                                                <i class="fas fa-trash-alt"></i>
+                                            <a href="delete_lecture.php?id=1" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('هل أنت متأكد من حذف هذه المحاضرة؟');">
+                                                <i class="fas fa-trash"></i> حذف
                                             </a>
                                         </td>
                                     </tr>
-
-                                    <!-- صف افتراضي 2 -->
                                     <tr>
                                         <td>2</td>
-                                        <td>هياكل البيانات</td>
-                                        <td>IT202</td>
-                                        <td>2</td>
-                                        <td>الثاني</td>
-                                        <td>تقنية معلومات</td>
+                                        <td>شبكات</td>
+                                        <td>م. محمد حمودة</td>
+                                        <td>الثلاثاء</td>
+                                        <td>الفترة الثانية</td>
+                                        <td>قاعة 2</td>
                                         <td>
-                                            <a href="edit.html?id=2" class="btn btn-sm btn-warning"
-                                                title="تعديل">
-                                                <i class="fas fa-edit"></i>
+                                            <a href="edit_lecture.php?id=2" class="btn btn-info btn-sm">
+                                                <i class="fas fa-edit"></i> تعديل
                                             </a>
-                                            <a href="delete_subject.ph?id=2" class="btn btn-sm btn-danger" title="حذف"
-                                                onclick="return confirm('هل أنت متأكد أنك تريد حذف هذه المادة؟');">
-                                                <i class="fas fa-trash-alt"></i>
+                                            <a href="delete_lecture.php?id=2" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('هل أنت متأكد من حذف هذه المحاضرة؟');">
+                                                <i class="fas fa-trash"></i> حذف
                                             </a>
                                         </td>
                                     </tr>
-
-                                    <!-- صف افتراضي 3 -->
-                                    <tr>
-                                        <td>3</td>
-                                        <td>شبكات الحاسوب</td>
-                                        <td>IT305</td>
-                                        <td>3</td>
-                                        <td>الأول</td>
-                                        <td>تقنية معلومات</td>
-                                        <td>
-                                            <a href="edit.html?id=3" class="btn btn-sm btn-warning"
-                                                title="تعديل">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a href="delete_subject.php?id=3" class="btn btn-sm btn-danger" title="حذف"
-                                                onclick="return confirm('هل أنت متأكد أنك تريد حذف هذه المادة؟');">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-
+                                    <!-- أضف مزيد من الصفوف حسب الحاجة -->
                                 </tbody>
                             </table>
                         </div>
@@ -441,16 +419,12 @@
             </section>
 
 
+
+
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.1.0
-            </div>
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
-        </footer>
+
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -459,7 +433,7 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
+    </script>
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -468,6 +442,11 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JS DataTables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
 </body>
 
 </html>
